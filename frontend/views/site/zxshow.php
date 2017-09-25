@@ -29,7 +29,7 @@ $this->title = '艾皓思';
                     </div>
                     <div class="met-shownews-footer">
 
-                        <ul class="pager pager-round">
+                        <!--<ul class="pager pager-round">
                             <li class="previous ">
                                 <a href="shownews.php?lang=cn&amp;id=45" title="当结构邂逅设计 发生了什么？">
                                     上一篇
@@ -42,14 +42,14 @@ $this->title = '艾皓思';
                                     <span aria-hidden="true" class='hidden-xs'>：智慧城市建设莫入误区</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="row">
 
-                    <div class="met-news-bar">
+                    <!--<div class="met-news-bar">
 
                         <div class="recommend news-list-md">
                             <h3>为您推荐</h3>
@@ -77,7 +77,7 @@ $this->title = '艾皓思';
 
                         </ul>
 
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
