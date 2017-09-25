@@ -2,11 +2,13 @@
 
 namespace backend\controllers;
 
+use common\models\City;
 use Yii;
 use common\models\Category;
 use common\models\CategorySearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * CategoryController implements the CRUD actions for Category model.
@@ -67,29 +69,26 @@ class CategoryController extends AdminController
         if ($model->load(Yii::$app->request->post()) ) {
 
 
-            if($_FILES) {
-                if ($_FILES['banner']['name']) {
-                    $banner = array();
-                    foreach ($_FILES['banner']['name'] as $k => $name) {
-                        if ($name) {
-                            $image['name'] = $name;
-                            $image['tmp_name'] = $_FILES['banner']['tmp_name'][$k];
-                            $imgname = $model->setImageInformation($image);
-                            $banner[] = $imgname;
-                        }
-                    }
-                    if ($banner) {
-                        $lunboimg = implode('|', $banner);
-                        $model->bannerimg = $lunboimg;
-                    }
-
+            $file = UploadedFile::getInstances($model, 'bannerimg');
+            if ($file) {
+                $imgAll = '';
+                foreach ($file as $fl) {
+                    $filename = 'uploads/' .mt_rand(1100,9900) .time() . '.' . $fl->extension;
+                    $imgAll .= $filename.'|';
+                    $fl->saveAs($filename);
                 }
+                $model->bannerimg = rtrim($imgAll,'|');
+            }else{
+                $model->bannerimg ='';
             }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $city = new City();
+            $cityData = $city->find()->all();
             return $this->render('create', [
                 'model' => $model,
+                'cityData' => $cityData,
             ]);
         }
     }
@@ -106,31 +105,28 @@ class CategoryController extends AdminController
 
         if ($model->load(Yii::$app->request->post()) ) {
 
-            if($_FILES) {
-                if ($_FILES['banner']['name']) {
-                    $banner = array();
-                    foreach ($_FILES['banner']['name'] as $k => $name) {
-                        if ($name) {
-                            $image['name'] = $name;
-                            $image['tmp_name'] = $_FILES['banner']['tmp_name'][$k];
-                            $imgname = $model->setImageInformation($image);
-                            $banner[] = $imgname;
-                        }
-                    }
-                    if ($banner) {
-                        $lunboimg = implode('|', $banner);
-                        $model->bannerimg = $lunboimg;
-                    }
-
+            $file = UploadedFile::getInstances($model, 'bannerimg');
+            if ($file) {
+                $imgAll = '';
+                foreach ($file as $fl) {
+                    $filename = 'uploads/' .mt_rand(1100,9900) .time() . '.' . $fl->extension;
+                    $imgAll .= $filename.'|';
+                    $fl->saveAs($filename);
                 }
+                $model->bannerimg = rtrim($imgAll,'|');
+            }else{
+                unset($model->bannerimg);
             }
 
 
-                $model->save();
+             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $city = new City();
+            $cityData = $city->find()->all();
             return $this->render('update', [
                 'model' => $model,
+                'cityData' => $cityData,
             ]);
         }
     }

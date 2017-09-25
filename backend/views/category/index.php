@@ -27,7 +27,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'orderby',
-            'bannerimg',
+//            'city',
+
+            [
+                'attribute'=>'city',
+                'value'=>function($model){
+                    return  \common\helps\Cityact::getName($model->city);
+                },
+            ],
+
             'bannername',
 
             ['class' => 'yii\grid\ActionColumn'],

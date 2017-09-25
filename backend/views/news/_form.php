@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\file\FileInput;
 /* @var $this yii\web\View */
 /* @var $model common\models\News */
 /* @var $form yii\widgets\ActiveForm */
@@ -73,35 +74,98 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'lunbotitle')->textInput(['maxlength' => true]) ?>
 
-
-    楼盘户型图
-    <?php  if($model->img){
-            $arr = explode('|',$model->img);
-        foreach($arr as $v){
+    <?=
+    $form->field($model, 'img')->widget(FileInput::classname(), [
+        'options' => ['multiple' => true],
+        'pluginOptions' => [
+            // 需要预览的文件格式
+            'previewFileType' => 'image',
+            // 预览的文件
+            'initialPreview' => ['http://zt.com/backend/web/uploads/20170816/0815150847081547imaerwge.png'],
+            // 需要展示的图片设置，比如图片的宽度等
+            'initialPreviewConfig' => ['width' => '120px'],
+            // 是否展示预览图
+            'initialPreviewAsData' => true,
+            // 异步上传的接口地址设置
+            'uploadUrl' => \yii\helpers\Url::toRoute(['/news/asyncupload']),
+            // 异步上传需要携带的其他参数，比如商品id等
+            'uploadExtraData' => [
+                'goods_id' => '',
+            ],
+            'uploadAsync' => true,
+            // 最少上传的文件个数限制
+            'minFileCount' => 1,
+            // 最多上传的文件个数限制
+            'maxFileCount' => 10,
+            // 是否显示移除按钮，指input上面的移除按钮，非具体图片上的移除按钮
+            'showRemove' => true,
+            // 是否显示上传按钮，指input上面的上传按钮，非具体图片上的上传按钮
+            'showUpload' => true,
+            //是否显示[选择]按钮,指input上面的[选择]按钮,非具体图片上的上传按钮
+            'showBrowse' => true,
+            // 展示图片区域是否可点击选择多文件
+            'browseOnZoneClick' => true,
+            //不覆盖预览
+            'overwriteInitial'=>false,
+            // 如果要设置具体图片上的移除、上传和展示按钮，需要设置该选项
+            'fileActionSettings' => [
+                // 设置具体图片的查看属性为false,默认为true
+                'showZoom' => false,
+                // 设置具体图片的上传属性为true,默认为true
+                'showUpload' => true,
+                // 设置具体图片的移除属性为true,默认为true
+                'showRemove' => true,
+            ],
+        ],
+        // 一些事件行为
+        'pluginEvents' => [
+            // 上传成功后的回调方法，需要的可查看data后再做具体操作，一般不需要设置
+            "fileuploaded" => "function (event, data, id, index) {
+                var img = $('#img').val();
+                $('#img').val(img+'|'+data.response[0]);
+        }",
+        ],
+    ]);
     ?>
-            <img src="../web/uploads/<?=$v?>" height="40" width="40"/>
-    <?php } ?>
-        <?= $form->field($model, 'img')->textInput() ?>
-    <?php } ?>
 
-    <input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-	<input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
-	<input type="file" name="img[]"/>
-    <input type="file" name="img[]"/>
+
+    <?= $form->field($model, 'img[]')->fileInput(['multiple' => true]);?>
+
+    <!--    楼盘户型图
+        <?php /* if($model->img){
+                $arr = explode('|',$model->img);
+            foreach($arr as $v){
+        */?>
+                <img src="../web/uploads/<?/*=$v*/?>" height="40" width="40"/>
+        <?php /*} */?>
+            <?/*= $form->field($model, 'img')->textInput() */?>
+        <?php /*} */?>
+
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>
+        <input type="file" name="img[]"/>-->
 
     <?= $form->field($model, 'huxing')->textInput() ?>
     <?= $form->field($model, 'mianji')->textInput() ?>
 
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    
+    <?= $form->field($model, 'description')->widget(\yii\redactor\widgets\Redactor::className(), [
+        'clientOptions' => [
+            'imageManagerJson' => ['/redactor/upload/image-json'],
+            'imageUpload' => ['/redactor/upload/image'],
+            'fileUpload' => ['/redactor/upload/file'],
+            'lang' => 'zh_cn',
+            'plugins' => ['clips', 'fontcolor','imagemanager']
+        ]
+    ])?>
 
     <?= $form->field($model, 'xiangmustatus')->textInput(['maxlength' => true]) ?>
 	

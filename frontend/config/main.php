@@ -44,6 +44,10 @@ return [
             ],
         ],
         */
+		'assetManager' => [
+			'basePath' => '@webroot/frontend/web/assets',
+			'baseUrl' => '@web/frontend/web/assets'
+		],
     ],
     'params' => $params,
 ];

@@ -39,18 +39,28 @@ return [
             'errorAction' => 'site/error',
         ],
 
-        'urlManager' => [
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
-        ],
+        ],*/
 
         'imgload'=>[
-            'class' => 'backend\components\Upload'
+            'class' => 'backend\components\Upload',
         ],
 
 
+    ],
+    'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+//            'uploadDir' => '@webroot/uploads',
+            'uploadDir' => '@backend/web/uploads/',
+//            'uploadUrl' => 'http://zhitianchina.com/backend/web/uploads',
+            'uploadUrl' => 'http://hb015744.gz01.bdysite.com/backend/web/uploads',
+            'imageAllowExtensions'=>['jpg','png','gif']
+        ],
     ],
     'params' => $params,
 ];

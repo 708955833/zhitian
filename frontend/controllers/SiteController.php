@@ -2,6 +2,8 @@
 namespace frontend\controllers;
 
 use common\models\Category;
+use common\models\Info;
+use common\models\Zixun;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -15,13 +17,15 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use common\models\News;
 use yii\web\UploadedFile;
+use yii\data\Pagination;
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
     public $root = '/app/frontend/web/';
-    public $imgpath = '/app/backend/web/uploads/';
+    public $imgpath = '/backend/web/';
+//    public $imgpath = '/ihouse/backend/web/';
     /**
      * @inheritdoc
      */
@@ -78,8 +82,7 @@ class SiteController extends Controller
     {
         $root = $this->root;
         $imgpath = $this->imgpath;
-		
-		$news = new News();
+		/*$news = new News();
 		$lunbo = $news->find()->where(['>','isLunbo',0])->orderBy('isLunbo desc')->limit(5)->asArray()->all();	
 
         
@@ -89,11 +92,156 @@ class SiteController extends Controller
         $cate = new Category();
         $cateDate =  $cate->find()->orderBy('id desc')->asArray()->all();
 
-        $lunimg = $cateDate[0];
+        $lunimg = $cateDate[0];*/
+
+        $cateid = Yii::$app->request->get('cate');
+        $order = Yii::$app->request->get('o');
+        $c = Yii::$app->request->get('c');  //城市
+        $c = $c?$c:'1';
+
+        //导航图
+
+        $cate = new Category();
+        $cateQuery =  $cate->find();
+        $cateQuery->where(['city'=>$c]);
+        if($cateid){
+            $cateQuery = $cateQuery->andWhere(['id'=>$cateid]);
+        }
+
+        $cateDate = $cateQuery->orderBy('id desc')->asArray()->one();
+        $imgArr = explode('|',$cateDate['bannerimg']);
+        $idArr = explode('|',$cateDate['bannername']);
+        $lunboArr = array();
+        foreach ($imgArr as $k=>$v){
+            if($v && isset($idArr[$k])) {
+                $row['img'] = $imgpath . $v;
+                $row['id'] = $idArr[$k];
+                $lunboArr[] = $row;
+            }
+        }
+
+
+        //楼盘
+        $info = new Info();
+        $Query =  $info->find();
+        $Query->where(['cityid'=>$c]);
+        if($cateid){
+            $Query->andWhere(['cateid'=>$cateid]);
+        }
+        if($order==1){
+            $Query =  $Query->orderBy('shouyi desc');
+        }elseif ($order==2){
+
+            $Query =  $Query->orderBy('price desc');
+        }elseif ($order==3){
+
+            $Query =  $Query->orderBy('shangxue desc');
+        }elseif ($order==4){
+
+            $Query =  $Query->orderBy('yimin desc');
+        }else{
+            $Query =  $Query->orderBy('id desc');
+        }
+
+        $data = $Query->asArray()->limit(8)->all();
+        //咨讯
+        $zixun = new Zixun();
+        $zxData = $zixun->find()->orderBy('id desc')->asArray()->all();
 
 
 
-        return $this->render('index',['data'=>$data,'root'=>$root,'imgpath'=>$imgpath,'cateDate'=>$cateDate,'lunimg'=>$lunimg,'lunbo'=>$lunbo]);
+        return $this->render('index',['data'=>$data,'root'=>$root,'imgpath'=>$imgpath,'lunboArr'=>$lunboArr,'zx'=>$zxData]);
+    }
+    public function actionList(){
+        $root = $this->root;
+        $imgpath = $this->imgpath;
+        $info = new Info();
+
+        $cateid = Yii::$app->request->get('cateid');
+        $order = Yii::$app->request->get('o');
+        $c = Yii::$app->request->get('c');  //城市
+        $c = $c?$c:'1';
+        $Query =  $info->find();
+        $Query = $Query->where(['cityid'=>$c]);
+
+        if($cateid){
+            $Query = $Query->andWhere(['cateid'=>$cateid]);
+        }
+
+        $pages = new Pagination(['totalCount' => $Query->count()]);
+        $pages->PageSize =20;
+
+        if($order==1){
+            $Query =  $Query->orderBy('shouyi desc');
+        }elseif ($order==2){
+
+            $Query =  $Query->orderBy('price desc');
+        }elseif ($order==3){
+
+            $Query =  $Query->orderBy('shangxue desc');
+        }elseif ($order==4){
+
+            $Query =  $Query->orderBy('yimin desc');
+        }
+
+        $data = $Query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->asArray()
+            ->all();
+
+        return $this->render('list',['data'=>$data,'root'=>$root,'imgpath'=>$imgpath,'pages' => $pages]);
+    }
+    public function actionShow(){
+        $root = $this->root;
+        $imgpath = $this->imgpath;
+
+        $id = Yii::$app->request->get('id');
+        $info = new Info();
+        $data = $info->find()->where(['id'=>$id])->asArray()->one();
+
+
+        return $this->render('show',['data'=>$data,'imgpath'=>$imgpath]);
+    }
+
+
+
+
+    public function actionZxshow(){
+        $id = Yii::$app->request->get('id');
+        $imgpath = $this->imgpath;
+        $zx = new Zixun();
+        $zxRow = $zx->find()->where(['id'=>$id])->asArray()->one();
+        return $this->render('zxshow',['zxRow'=>$zxRow,'imgpath'=>$imgpath]);
+    }
+
+    public function actionZxlist(){
+
+        $imgpath = $this->imgpath;
+        $zx = new Zixun();
+
+
+        $Query =  $zx->find();
+
+
+        $pages = new Pagination(['totalCount' => $Query->count()]);
+        $pages->PageSize =20;
+
+        $data = $Query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->asArray()
+            ->all();
+
+        $tj = $zx->find()->orderBy('id asc')->limit('5')->asArray()->all();
+
+        return $this->render('zxlist',['data'=>$data,'imgpath'=>$imgpath,'pages' => $pages,'tj'=>$tj]);
+    }
+
+
+
+    public function actionContactus()
+    {
+        $imgpath = $this->imgpath;
+        return $this->render('contactus',['imgpath'=>$imgpath]);
     }
 
     public function actionDetail(){
@@ -202,7 +350,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-
+public function actionAboutus()
+    {
+        return $this->render('aboutus');
+    }
     /**
      * Signs user up.
      *

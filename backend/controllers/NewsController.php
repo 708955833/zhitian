@@ -30,7 +30,24 @@ class NewsController extends AdminController
             ],
         ];
     }
+    public function actionAsyncupload(){
+        $model = new News();
+        $model->img = UploadedFile::getInstance($model, "img");
 
+        //文件上传存放的目录
+        $dir = Yii::$app->basePath."/web/uploads/".date("Ymd");
+        if (!is_dir($dir))
+            mkdir($dir);
+
+        //文件名
+        $fileName = date("HiiHsHis").$model->img->baseName . "." . $model->img->extension;
+        $dir = $dir."/". $fileName;
+        $model->img->saveAs($dir);
+        $uploadSuccessPath = "/uploads/".date("Ymd")."/".$fileName;
+        return json_encode(array($uploadSuccessPath)) ;
+        exit;
+        return array("result"=>"Success","url"=>$uploadSuccessPath);
+    }
     /**
      * Lists all News models.
      * @return mixed
@@ -143,8 +160,12 @@ class NewsController extends AdminController
     {
         $model = $this->findModel($id);
         $post = Yii::$app->request->post();
+
+        /*print_r($_POST);
+        print_r($_FILES);
+        exit;*/
         if ($model->load($post) ) {
-            if($_FILES){
+/*            if($_FILES){
                 if($_FILES['lunbo']['name']){
                     $lunboarr = array();
                     foreach($_FILES['lunbo']['name']  as $k=>$name ){
@@ -189,14 +210,41 @@ class NewsController extends AdminController
                     $model->bigLunboImg = $model->setImageInformation($_FILES['bigLunboImg']);
                 }
 
+            }*/
+
+
+/*            $uploadSuccessPath = "";
+            if (Yii::$app->request->isPost) {
+
+                $model->img = UploadedFile::getInstance($model, "img");
+                var_dump($model->img);
+                exit;
+                //文件上传存放的目录
+                $dir = Yii::$app->basePath."/web/uploads/".date("Ymd");
+                if (!is_dir($dir))
+                    mkdir($dir);
+                if ($model->validate()) {
+                    //文件名
+                    $fileName = date("HiiHsHis").$model->img->baseName . "." . $model->img->extension;
+                    $dir = $dir."/". $fileName;
+                    $model->img->saveAs($dir);
+                    $uploadSuccessPath = "/uploads/".date("Ymd")."/".$fileName;
+                }
+            }*/
+
+            $file = UploadedFile::getInstances($model, 'img');
+            if ($file) {
+                $imgAll = '';
+                foreach ($file as $fl) {
+                    $filename = 'uploads/' .mt_rand(1100,9900) .time() .$fl->baseName. '.' . $fl->extension;
+                    $imgAll .= $filename.'|';
+                    $fl->saveAs($filename);
+                }
+                $model->img = $imgAll;
             }
 
-			echo "<pre>";
-			print_r($model);
+
             $re =  $model->save();
-            var_dump($model->getErrors());
-            var_dump($re);
-            exit;
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             $cate = new Category();

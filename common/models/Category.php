@@ -30,7 +30,7 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
 //            [['name', 'orderby', 'bannerimg', 'bannername'], 'required'],
-            [['orderby'], 'integer'],
+            [['orderby','city'], 'integer'],
             [['name', 'bannerimg', 'bannername'], 'string', 'max' => 255],
         ];
     }
@@ -43,9 +43,10 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'city' => '顶级栏目（所属城市默认1 新增城市追加）',
             'orderby' => 'Orderby',
-            'bannerimg' => 'Bannerimg',
-            'bannername' => 'Bannername',
+            'bannerimg' => '轮播图',
+            'bannername' => '跳转详细id 多个以 | 分割',
         ];
     }
     public function setImageInformation($image){

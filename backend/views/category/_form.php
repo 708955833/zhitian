@@ -16,24 +16,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'orderby')->textInput() ?>
 
-    图
-
-    <?php  if($model->bannerimg){
-           $arr = explode('|',$model->bannerimg);
-           foreach($arr as $v){
-        ?>
-            <img height="40" width="40" src="../web/uploads/<?=$v?>" />
-        <?php }  ?>
-        <?= $form->field($model, 'bannerimg')->textInput(['maxlength' => true]) ?>
-    <?php }  ?>
-    <input type="file" name="banner[]" />
-    <input type="file" name="banner[]" />
-    <input type="file" name="banner[]" />
-    <input type="file" name="banner[]" />
 
 
-    
-    
+    <?= $form->field($model, 'city')->dropDownList(\yii\helpers\ArrayHelper::map($cityData,'id', 'name')) ?>
+
+
+    <?= $form->field($model, 'bannerimg[]')->fileInput(['multiple' => true]);?>
 
     <?= $form->field($model, 'bannername')->textInput(['maxlength' => true]) ?>
 

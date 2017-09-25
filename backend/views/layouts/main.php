@@ -36,9 +36,10 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
-        ['label' => '区域楼盘', 'url' => ['category/index']],
-        ['label' => '楼盘列表', 'url' => ['news/index']],
-
+        ['label' => '地区首页', 'url' => ['category/index']],
+        ['label' => '楼盘信息', 'url' => ['info/index']],
+        ['label' => '资讯', 'url' => ['zixun/index']],
+        ['label' => '国家列表', 'url' => ['city/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

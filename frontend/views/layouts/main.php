@@ -9,136 +9,127 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
-
+use yii\helpers\Url;
 AppAsset::register($this);
-$this->registerCssFile("@web/css/home.css");
-$this->registerCssFile("@web/css/common.css");
-$this->registerCssFile("@web/css/detail.css");
-$this->registerCssFile("@web/css/swiper.min.css");
+$this->registerCssFile("@web/css/metinfo.css");
 
-
+//<script src="templates/res017/cache/metinfo.js"></script>
 
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
+    <title>艾皓思</title>
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="generator" content="MetInfo 5.3.16"  data-variable="http://zt.com/frontend/web/,cn,10001,,10001,res017" />
+<!--    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+<!--    <link rel='stylesheet' href='templates/res017/cache/metinfo.css?20170804'>-->
+    <?=Html::cssFile('/static/css/metinfo.css')?>
 </head>
-<body>
-
-
-<div class="outter">
-
-    <!-- 上导航区域 Include Start-->
-    <div class="top_bar">
-        <div class="top_bar_inner">
-            <div id="logo"><img src="../web/img/logo.png"/></div>
-            <div class="date"><span class="text">热线电话</span><span class="tel"><a style="color:blue"  href="tel :0312-5562107">0312-5562107</a></span></div>
-        </div>
-    </div>
-    <!-- 上导航区域 Include End-->
-
-    <?= Breadcrumbs::widget([
-        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]) ?>
-    <?= Alert::widget() ?>
-    <?= $content ?>
-
-
-
-
-
-
-
-    <!-- footer Navigation Include Start-->
-    <div class="footer">
-        <div class="footer-con">
-            <span> 版权所有：北京*****有限公司</span><span>网站备案/许可证：京ICP备****号-1</span>
-        </div>
-    </div>
-    <!-- footer Navigation Include End-->
-
-    <!--底部 电话，短信 Include Start-->
-    <div class="bottom-tab">
-        <div class="bottom-tab-relative clearfix">
-					<span>
-						<a href="tel:0312-5562107" title="电话">
-                            <img src="../web/img/tel.jpg"/>
-                        </a>
-					 </span>
-					 <span>
-						<a href="sms:0312-5562107" title="短信">
-                            <img src="../web/img/message.jpg"/>
-                        </a>
-					</span>
-        </div>
-    </div>
-    <!--底部 电话，短信 Include End-->
-
+<body class="met-navfixed">
+<!--[if lte IE 8]>
+<div class="text-center padding-top-50 padding-bottom-50 bg-blue-grey-100">
+    <p class="browserupgrade font-size-18">你正在使用一个<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/" target="_blank">升级您的浏览器</a>，以提高您的体验。</p>
 </div>
-</body>
-</html>
-
-
-<!--
-<div class="wrap">
-    <?php
-/*    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    */?>
-
+<![endif]-->
+<nav class="navbar navbar-default met-nav navbar-fixed-top" role="navigation">
     <div class="container">
-        <?/*= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) */?>
-        <?/*= Alert::widget() */?>
-        <?/*= $content */?>
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle hamburger hamburger-close collapsed"
+                        data-target="#example-navbar-default-collapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand navbar-logo vertical-align" title="res017">
+                    <div class="vertical-align-middle"><img src="upload/201705/logo.png" alt="ihouse" title="ihouse" /></div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="example-navbar-default-collapse">
+
+                <ul class="nav navbar-nav navbar-right navlist">
+                    <li><a href="<?=Url::to(['site/index'])?>" title="首页" class="link <?=  Yii::$app->controller->action->id=='index' && !Yii::$app->request->get('cate') ?'active':'' ?>">首页</a></li>
+
+                    <li class="dropdown margin-left-30 ">
+
+                        <?php
+                        $c = Yii::$app->request->get('c');
+                        $c = $c?$c:1;
+                        $cateDate = \common\helps\Categoryact::getCate($c);
+                        $cateid = Yii::$app->request->get('cate');
+                        $name='';
+                        if($cateid){
+                            foreach($cateDate as $vv){
+                                if($vv['id'] == $cateid){
+                                    $name = $vv['name'];
+                                }
+                            }
+                        }
+                        ?>
+
+                        <a
+                            class="dropdown-toggle link  animation-zoomIn <?=  Yii::$app->controller->action->id=='index' && Yii::$app->request->get('cate') ?'active':'' ?> "
+                            data-toggle="dropdown"
+                            data-hover="dropdown"
+                            href="<?=Url::to(['site/index','cate'=>$cateid])?>"
+                            aria-expanded="true"
+                            role="button"
+
+                            title="<?=$name?$name:'区域楼盘'?>"
+                        >
+                            <?=$name?$name:'区域楼盘'?>
+
+
+                            <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right bullet " role="menu" >
+
+                            <li class='visible-xs active'><a href="product/index.html"  title="全部" class="">全部</a></li>
+
+                            <?php
+
+                                foreach($cateDate as $v){
+                            ?>
+                            <li class="animation-fade animation-delay-"><a href="<?=Url::to(['site/index','cate'=>$v['id'],'c'=>Yii::$app->request->get('c')])?>" class=" animation-fade "  title="<?=$v['name']?>"><?=$v['name']?></a></li>
+
+                            <?php } ?>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="margin-left-30"><a href="<?=Url::to(['site/contactus'])?>"  title="联系" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系</a></li>
+
+					<li class="margin-left-30"><a href="<?=Url::to(['site/aboutus'])?>"  title="联系" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='aboutus' ?'active':'' ?>  ">公司简介</a></li>
+                </ul>
+
+            </div>
+        </div>
     </div>
-</div>
+</nav>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?/*= date('Y') */?></p>
+<?= $content ?>
 
-        <p class="pull-right"><?/*= Yii::powered() */?></p>
+
+<footer>
+    <div class="container text-center">
+        <p>我的网站 版权所有 2008-2016 湘ICP备8888888 </p>
+
+        
     </div>
 </footer>
+<button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"><i class="icon wb-chevron-up" aria-hidden="true"></i></button>
 
+
+<?=Html::jsFile('/frontend/web/js/metinfo.js')?>
+<!--<script src="templates/res017/cache/metinfo.js"></script>-->
 </body>
-</html>-->
+</html>
 
 
 
