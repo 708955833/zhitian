@@ -111,15 +111,15 @@ $this->title = '艾皓思';
 <div class="met-index-about met-index-body">
     <div class="container ">
         <div class="about_img col-sm-12 col-md-4 col-lg-4" data-animate="zoomIn"  data-plugin="appear" data-repeat="false">
-            <img data-original="upload/201705/1494497736.png" /></div>
+            <img data-original="upload/201705/1326214626.jpg" /></div>
         <div class="about_cont col-sm-12 col-md-8 col-lg-8">
             <h3 class="invisible" data-plugin="appear" data-animate="fade" data-repeat="false">关于我们</h3>
             <p class="desc invisible animation-delay-100" data-plugin="appear" data-animate="fadeInDown" data-repeat="false" >ABOUT US</p>
             <p class="desc invisible animation-delay-200" data-plugin="appear" data-animate="fadeInDown" data-repeat="false"></p>
             <div class="met-editor no-gallery lazyload clearfix invisible animation-delay-300" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">
-                我们整个团队是一支诚信负责、团结进取、高效务实开拓型的精英团队。在团队的努力下，2008年成长为建筑行业建筑工程结构设计事务所甲级企业。基于“用心、诚信”的经营原则，服务各类顾客的丰富经验，日益完善的经营和服务体系，玖鼎正合致力于成为西南一流的工程优化设计服务公司，为顾客提供最优质的服务。基于“专业、合理”的设计原则，baubaus拥有一批专业素质极强的设计团队，在所设计的作品中都能取得最优的结构体系和工程设计经济指标。
+                河北艾皓思房地产经纪有限公司是中国的一家顶级房地产代理机构，专门从事全球住宅及投资物业的代理服务。公司成立于2017年，虽然是后起之秀，但在服务理念和海外资产配置管理方面是国内领先的优秀代理商之一，掌握了欧洲、北美、东南亚等地区的大量待售房源。房源包括:现房、期房和二手房类型包括：酒店式公寓、泰式公寓、现代化公寓、别墅、海景别墅和土地。公司聘有服务和经验一流中文销售顾问，可协助并引导您在全球购买房产。欢迎您联系Ihouse，我们将协助您成功和满意的在海外投资房产。
             </div>
-            <a href="<?=Url::to(['site/contactus'])?>" class="more" data-animate="bounceIn"></a>
+            <a href="<?=Url::to(['site/aboutus'])?>" class="more" data-animate="bounceIn"></a>
         </div>
     </div>
 </div>

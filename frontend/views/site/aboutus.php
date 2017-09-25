@@ -36,10 +36,10 @@ $this->title = '艾皓思';
                         <table>
                             <tbody style="padding: 0px; margin: 0px;">
                             <tr class="firstRow" style="padding: 0px; margin: 0px;"><td width="569" valign="top" style="padding: 0px; margin: 0px; word-break: break-all;">
-                                    <img class="imgloading" height="200" data-original="upload/201705/1326214626.jpg" title="upload/201705/logo.png" alt="简介.png"/></td>
+                                    <img class="imgloading" height="200" data-original="upload/201705/1326214626.jpg" title="upload/201705/1326214626.jpg" alt="简介.png"/></td>
                                 <td width="30" valign="top" style="padding: 0px; margin: 0px;"><br/></td><td width="569" valign="top" style="padding: 0px; margin: 0px; word-break: break-all;">
                                     <p style="word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;"><br style="padding: 0px; margin: 0px;"/></p>
-                                    <p style="word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;">Ihouse房地产公司是中国的一家顶级房地产代理机构，专门从事全球住宅及投资物业的代理服务。公司成立于2017年，虽然是后起之秀，但在服务理念和海外资产配置管理方面是国内领先的优秀代理商之一，掌握了欧洲、北美、东南亚等地区的大量待售房源。房源包括:现房、期房和二手房类型包括：酒店式公寓、泰式公寓、现代化公寓、别墅、海景别墅和土地。公司聘有服务和经验一流中文销售顾问，可协助并引导您在全球购买房产。欢迎您联系Ihouse，我们将协助您成功和满意的在海外投资房产。</p>
+                                    <p style="word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;">河北艾皓思房地产经纪有限公司是中国的一家顶级房地产代理机构，专门从事全球住宅及投资物业的代理服务。公司成立于2017年，虽然是后起之秀，但在服务理念和海外资产配置管理方面是国内领先的优秀代理商之一，掌握了欧洲、北美、东南亚等地区的大量待售房源。房源包括:现房、期房和二手房类型包括：酒店式公寓、泰式公寓、现代化公寓、别墅、海景别墅和土地。公司聘有服务和经验一流中文销售顾问，可协助并引导您在全球购买房产。欢迎您联系Ihouse，我们将协助您成功和满意的在海外投资房产。</p>
                                     <p style="word-wrap: break-word; word-break: normal;"><br/></p>
                                 </td>
                             </tr>
