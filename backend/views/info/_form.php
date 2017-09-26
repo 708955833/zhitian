@@ -46,18 +46,6 @@ use yii\widgets\ActiveForm;
 
 
 
-    <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
-        'clientOptions' => [
-            'imageManagerJson' => ['/redactor/upload/image-json'],
-            'imageUpload' => ['/redactor/upload/image'],
-            'fileUpload' => ['/redactor/upload/file'],
-            'lang' => 'zh_cn',
-            'plugins' => ['clips', 'fontcolor','imagemanager']
-        ]
-    ])?>
-
-
-
     <?= $form->field($model, 'desc')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'banner[]')->fileInput(['multiple' => true]);?>

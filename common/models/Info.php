@@ -42,8 +42,8 @@ class Info extends \yii\db\ActiveRecord
         return [
 //            [['title', 'cateid', 'dizhi', 'guige', 'tese', 'price', 'shouyi', 'shoufu', 'zhangfu', 'zujin', 'indeximg', 'content', 'desc', 'banner', 'createtime'], 'required'],
             [['cateid',  'createtime','d1','d2','d3','d4','d5','yimin','shangxue','cityid'], 'integer'],
-            [['content','c1','c2','c3','c4','c5'], 'string'],
-            [['title', 'dizhi', 'guige', 'tese', 'indeximg', 'banner','price', 'shouyi', 'shoufu', 'zhangfu', 'zujin'], 'string', 'max' => 255],
+            [['content','c1','c2','c3','c4','c5', 'banner'], 'string'],
+            [['title', 'dizhi', 'guige', 'tese', 'indeximg','price', 'shouyi', 'shoufu', 'zhangfu', 'zujin'], 'string', 'max' => 255],
             [['gongyu', 'jingzhuang', 'mianji','name1','name2','name3','name4','name5'], 'string', 'max' => 20],
 //            [['desc1','desc2','desc3'], 'string', 'max' => 100],
             [['desc','desc1'], 'string', 'max' => 500],

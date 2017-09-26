@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 $this->title = '艾皓思';
 ?>
+
 <div class="met-banner " data-height='300||'>
 
     <div class="slick-slide">
@@ -53,7 +54,8 @@ $this->title = '艾皓思';
                         <p class="ordinary-output target-output" style="margin-bottom: 0px; white-space: normal; padding: 0px; word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;"><span class="" style="padding: 0px; margin: 0px;">Contact us</span></p>
                         <p style="margin-bottom: 0px; white-space: normal; padding: 0px; word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;"><br style="padding: 0px; margin: 0px;"/></p><p style="margin-bottom: 0px; white-space: normal; padding: 0px; word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;">
                             <span style="color: rgb(89, 89, 89);">公司地址：涿州市清凉寺办事处华阳东路256号 &nbsp; &nbsp;&nbsp;</span>
-                            <span style="color: rgb(89, 89, 89);">联系电话:186 1000 8643 &nbsp; &nbsp;&nbsp;</span>
+
+                            <span style="color: rgb(89, 89, 89);">     联系电话: <a href="tel:18610008643" >  <span  class="Hiconbg pr  HiconYi "  ></span>  186 1000 8643</a></span>
                             <span style="color: rgb(89, 89, 89);"></span></p>
                         <p style="margin-bottom: 0px; white-space: normal; padding: 0px; word-wrap: break-word; word-break: normal; color: rgb(106, 106, 106); font-family: Arial, 微软雅黑; font-size: 13px;">
                             <span style="color: rgb(89, 89, 89);"><br/></span></p>

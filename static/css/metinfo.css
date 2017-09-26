@@ -39489,3 +39489,6 @@ footer p {
 .pe-airplay:before {
     content: "\e67f"
 }
+.Hiconbg{display:inline-block;width:16px;height:16px;font-size:11px;color:#fff;margin-left:7px;text-align:center;background:url(../img/hicon.gif) no-repeat;float: none;}
+
+.HiconYi{background-position:0px -16px;}

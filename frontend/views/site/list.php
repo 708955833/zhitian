@@ -93,7 +93,7 @@ $this->title = '艾皓思';
 <div class="met-product animsition type-1">
     <div class="container">
         <div class='row'>
-            <ul class="blocks-1 blocks-sm-1 blocks-md-2 blocks-xlg-2  met-page-ajax met-grid" id="met-grid" data-scale='0.625'>
+            <ul class="blocks-1 blocks-sm-2 blocks-md-2 blocks-xlg-4  met-page-ajax met-grid" id="met-grid" data-scale='0.625'>
 
                 <?php
                     foreach($data as $v){

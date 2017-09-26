@@ -101,10 +101,12 @@ class InfoController extends Controller
             }
             //添加时判断栏目所属城市 插入到info中
             $model->cityid = Categoryact::getCid($model->cateid);
+//print_r($model);
+//            print_r($model->getErrors());
 
-
-            //exit;
             $a = $model->save();
+//var_dump($a);
+//            exit;
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             $cate = new Category();
