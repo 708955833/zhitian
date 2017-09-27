@@ -115,7 +115,20 @@ $this->registerCssFile("@web/css/metinfo.css");
 
 <?= $content ?>
 
-
+<div class="bottom-tab">
+    <div class="bottom-tab-relative clearfix">
+					<span>
+						<a href="tel:18610008643" title="电话">
+                            <img src="/static/img/tel.jpg"/>
+                        </a>
+					 </span>
+					 <span>
+						<a href="sms:18610008643" title="短信">
+                            <img src="/static/img/message.jpg"/>
+                        </a>
+					</span>
+    </div>
+</div>
 <footer>
     <div class="container text-center">
         <p>我的网站 版权所有 2008-2016 湘ICP备8888888 </p>

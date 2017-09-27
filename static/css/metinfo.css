@@ -39492,3 +39492,41 @@ footer p {
 .Hiconbg{display:inline-block;width:16px;height:16px;font-size:11px;color:#fff;margin-left:7px;text-align:center;background:url(../img/hicon.gif) no-repeat;float: none;}
 
 .HiconYi{background-position:0px -16px;}
+
+.bottom-tab{
+    display:none;
+    bottom: 0;
+    padding:5px 0;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    background:#000000 none repeat scroll 0 0;
+}
+
+.bottom-tab-relative{
+    position: relative;
+    width: 100%;
+}
+.bottom-tab-relative span{
+    color: #ffffff;
+    display: block;
+    float: left;
+    width: 50%;
+    text-align:center;
+}
+.bottom-tab-relative a{
+    margin:0 auto;
+    display:block;
+    width:26px;
+}
+.bottom-tab-relative a img{
+    display:block;
+    width:100%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 765px), only screen and (min-width: 1px) and (max-width: 765px) {
+
+    .bottom-tab {
+        display: block;
+    }
+}
