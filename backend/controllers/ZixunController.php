@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\UploadForm;
 use Yii;
 use common\models\Zixun;
 use common\models\ZixunSearch;
@@ -67,7 +68,7 @@ class ZixunController extends Controller
         $model = new Zixun();
 
         if ($model->load(Yii::$app->request->post()) ) {
-            $file = UploadedFile::getInstances($model, 'img');
+            /*$file = UploadedFile::getInstances($model, 'img');
             if ($file) {
                 $imgAll = '';
                 foreach ($file as $fl) {
@@ -76,7 +77,16 @@ class ZixunController extends Controller
                     $fl->saveAs($filename);
                 }
                 $model->img = rtrim($imgAll,'|');
-            }
+            }*/
+            
+            $fileLoad =  new UploadForm();
+            $fileLoad->imageFile = UploadedFile::getInstances($model, 'img');
+
+//            var_dump($fileLoad->validate());
+
+            $aa =  $fileLoad->upload();
+var_dump($aa);
+            exit;
 
             $model->time = time();
             $model->save();
