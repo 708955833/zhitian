@@ -41,7 +41,7 @@ $this->title = '艾皓思';
         ?>
 
 
-        <h3 class="invisible" data-plugin="appear" data-animate="fade" data-repeat="false"><?=\common\helps\Cityact::getName($c)?>信息</h3>
+        <h3 class="invisible" data-plugin="appear" data-animate="fade" data-repeat="false"><?=\common\helps\Cityact::getName($c)?>房产</h3>
         <p class="desc invisible animation-delay-100" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">—— CASE——</p>
         <p class="desc invisible animation-delay-200" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">最专业最受欢迎的海外置业团队，专注于打造最美好的生活</p>
         <div class='invisible animation-delay-300' data-plugin="appear" data-animate="fadeInUp" data-repeat="true">
