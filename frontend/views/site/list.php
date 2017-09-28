@@ -18,7 +18,9 @@ $this->title = '艾皓思';
                 <div class='banner-text-con'>
                     <div>
 
-                        <h1 style="color:;">信息列表</h1>
+                        <h1 style="color:;">
+                            <?=\common\helps\Categoryact::getName(Yii::$app->request->get('cateid'))?>
+                        </h1>
 
                     </div>
                 </div>
@@ -109,6 +111,8 @@ $this->title = '艾皓思';
                         </figure>
                         <h4 class="widget-title">
                             <a href="<?=\yii\helpers\Url::to(['site/show','id'=>$v['id'],'c'=>Yii::$app->request->get('c')])?>" title="<?=$v['title']?>" target='_self'><?=$v['title']?></a>
+                            <span style="color:#F00; float:right;"><?=$v['price']?></span>
+                            <div style="clear:both;"></div>
                         </h4>
                             <?php
                                 if($v['desc1']){

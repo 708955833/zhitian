@@ -91,87 +91,89 @@ $this->title = '艾皓思';
                                 </div>
                             </div>
                         </div>-->
-
-                        <?php if($data['name1'] && $data['c1'] ){ ?>
-                        <div class="panel product-detail">
-                            <div class="panel-body">
-                                <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-                                    <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige1()" data-get="product-details"><?=$data['name1']?>(<span id="conid1"> <?=$data['d1']?'展开':'隐藏' ?>  </span>)</a></li>
-
-                                </ul>
-                                <div class="tab-content"  id="tab-content1" <?=$data['d1']?'style="display: none"':'' ?>>
-                                    <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
-                                        <div><?=$data['c1']?></div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <?php } ?>
-                        <?php if($data['name2'] && $data['c2'] ){ ?>
+                        <?php
+                            for($i=1;$i<=5;$i++){
+                        ?>
+                            <?php if($data['name'.$i] && $data['c'.$i] ){ ?>
                             <div class="panel product-detail">
                                 <div class="panel-body">
                                     <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige2()" data-get="product-details"><?=$data['name2']?>(<span id="conid2"> <?=$data['d2']?'展开':'隐藏' ?>  </span>)</a></li>
+                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details"  data-get="product-details"><?=$data['name'.$i]?></a></li>
 
                                     </ul>
-                                    <div class="tab-content"  id="tab-content2" <?=$data['d2']?'style="display: none"':'' ?>>
+                                    <div class="show_qf_box"  id="Introduce<?=$i?>">
+                                        <?=$data['c'.$i]?>
+                                    </div>
+                                    <span onclick="zhankai<?=$i?>()"  class="zhankai"><em id="fold<?=$i?>"><img src="/static/img/zhedie1.png" /></em></span>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        <?php } ?>
+
+                        <?php /*if($data['name2'] && $data['c2'] ){ */?><!--
+                            <div class="panel product-detail">
+                                <div class="panel-body">
+                                    <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
+                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details"  data-get="product-details"><?/*=$data['name2']*/?></a></li>
+
+                                    </ul>
+                                    <div class="tab-content"  id="tab-content2" <?/*=$data['d2']?'style="display: none"':'' */?>>
                                         <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
-                                            <div><?=$data['c2']?></div>
+                                            <div><?/*=$data['c2']*/?></div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                        <?php if($data['name3'] && $data['c3'] ){ ?>
+                        <?php /*} */?>
+                        <?php /*if($data['name3'] && $data['c3'] ){ */?>
                             <div class="panel product-detail">
                                 <div class="panel-body">
                                     <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige3()" data-get="product-details"><?=$data['name3']?>(<span id="conid3"> <?=$data['d3']?'展开':'隐藏' ?>  </span>)</a></li>
+                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige3()" data-get="product-details"><?/*=$data['name3']*/?></a></li>
 
                                     </ul>
-                                    <div class="tab-content"  id="tab-content3" <?=$data['d3']?'style="display: none"':'' ?>>
+                                    <div class="tab-content"  id="tab-content3" <?/*=$data['d3']?'style="display: none"':'' */?>>
                                         <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
-                                            <div><?=$data['c3']?></div>
+                                            <div><?/*=$data['c3']*/?></div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                        <?php if($data['name4'] && $data['c4'] ){ ?>
+                        <?php /*} */?>
+                        <?php /*if($data['name4'] && $data['c4'] ){ */?>
                             <div class="panel product-detail">
                                 <div class="panel-body">
                                     <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige4()" data-get="product-details"><?=$data['name4']?>(<span id="conid4"> <?=$data['d4']?'展开':'隐藏' ?>  </span>)</a></li>
+                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige4()" data-get="product-details"><?/*=$data['name4']*/?></a></li>
 
                                     </ul>
-                                    <div class="tab-content"  id="tab-content4" <?=$data['d4']?'style="display: none"':'' ?>>
+                                    <div class="tab-content"  id="tab-content4" <?/*=$data['d4']?'style="display: none"':'' */?>>
                                         <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
-                                            <div><?=$data['c4']?></div>
+                                            <div><?/*=$data['c4']*/?></div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                        <?php if($data['name5'] && $data['c5'] ){ ?>
+                        <?php /*} */?>
+                        <?php /*if($data['name5'] && $data['c5'] ){ */?>
                             <div class="panel product-detail">
                                 <div class="panel-body">
                                     <ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige5()" data-get="product-details"><?=$data['name5']?>(<span id="conid5"> <?=$data['d5']?'展开':'隐藏' ?>  </span>)</a></li>
+                                        <li class="active"><a data-toggle="tab" href="showproduct.php?lang=cn&amp;id=43#product-details" onclick="contenthige5()" data-get="product-details"><?/*=$data['name5']*/?></a></li>
 
                                     </ul>
-                                    <div class="tab-content"  id="tab-content5" <?=$data['d5']?'style="display: none"':'' ?>>
+                                    <div class="tab-content"  id="tab-content5" <?/*=$data['d5']?'style="display: none"':'' */?>>
                                         <div class="tab-pane met-editor lazyload clearfix  active" id="product-details">
-                                            <div><?=$data['c5']?></div>
+                                            <div><?/*=$data['c5']*/?></div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        --><?php /*} */?>
 
 
                     </div>
@@ -209,6 +211,89 @@ $this->title = '艾皓思';
     </div>
 </div>
 <script type="text/javascript">
+
+
+    function zhankai1() {
+        var div = document.getElementById("Introduce1");
+        if(div.style.height=="auto"){
+            div.style.height="96px";
+            var fold = document.getElementById("fold1");
+            fold.innerHTML="<img src='/static/img/zhedie1.png' />";
+        }else{
+            div.style.height="auto";
+            var fold = document.getElementById("fold1");
+            fold.innerHTML="<img src='/static/img/zhedie2.png' />";
+        }
+    }
+
+
+    function zhankai2() {
+        var div = document.getElementById("Introduce2");
+        if(div.style.height=="auto"){
+            div.style.height="96px";
+            var fold = document.getElementById("fold2");
+            fold.innerHTML="<img src='/static/img/zhedie1.png' />";
+        }else{
+            div.style.height="auto";
+            var fold = document.getElementById("fold2");
+            fold.innerHTML="<img src='/static/img/zhedie2.png' />";
+        }
+    }
+
+    function zhankai3() {
+        var div = document.getElementById("Introduce3");
+        if(div.style.height=="auto"){
+            div.style.height="96px";
+            var fold = document.getElementById("fold3");
+            fold.innerHTML="<img src='/static/img/zhedie1.png' />";
+        }else{
+            div.style.height="auto";
+            var fold = document.getElementById("fold3");
+            fold.innerHTML="<img src='/static/img/zhedie2.png' />";
+        }
+    }
+
+    function zhankai4() {
+        var div = document.getElementById("Introduce4");
+        if(div.style.height=="auto"){
+            div.style.height="96px";
+            var fold = document.getElementById("fold4");
+            fold.innerHTML="<img src='/static/img/zhedie1.png' />";
+        }else{
+            div.style.height="auto";
+            var fold = document.getElementById("fold4");
+            fold.innerHTML="<img src='/static/img/zhedie2.png' />";
+        }
+    }
+
+    function zhankai5() {
+        var div = document.getElementById("Introduce5");
+        if(div.style.height=="auto"){
+            div.style.height="96px";
+            var fold = document.getElementById("fold5");
+            fold.innerHTML="<img src='/static/img/zhedie1.png' />";
+        }else{
+            div.style.height="auto";
+            var fold = document.getElementById("fold5");
+            fold.innerHTML="<img src='/static/img/zhedie2.png' />";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    function contenthige(){
        if($("#tab-content").is(":hidden")){
            $("#tab-content").show();

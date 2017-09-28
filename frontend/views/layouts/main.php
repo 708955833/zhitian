@@ -11,7 +11,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 AppAsset::register($this);
-$this->registerCssFile("@web/css/metinfo.css");
+//$this->registerCssFile("@web/css/metinfo.css");
 
 //<script src="templates/res017/cache/metinfo.js"></script>
 
@@ -31,6 +31,22 @@ $this->registerCssFile("@web/css/metinfo.css");
 <!--    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
 <!--    <link rel='stylesheet' href='templates/res017/cache/metinfo.css?20170804'>-->
     <?=Html::cssFile('/static/css/metinfo.css')?>
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            font-family: "微软雅黑";
+        }
+        body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+        .show_qf_bt{ border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;line-height:26px; padding:8px 30px 8px 10px; font-size:18px; display:inline-block; margin:0px;}
+        .show_qf_table{border-bottom:1px solid #e7e7e7;border-right:1px solid #e7e7e7; width:100%}
+        .show_qf_table td{border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;height:34px; line-height:30px; text-indent:10px; font-size:14px;}
+        .show_qf_box{height:96px;padding:0px;overflow:hidden;}
+        .zhankai{text-align: center;margin: 10px auto;width: 30px;display: block;cursor: pointer;}
+        .zhankai img{ width:30px;}
+    </style>
 </head>
 <body class="met-navfixed">
 <!--[if lte IE 8]>
@@ -56,10 +72,10 @@ $this->registerCssFile("@web/css/metinfo.css");
                 <ul class="nav navbar-nav navbar-right navlist">
                     <li><a href="<?=Url::to(['site/index'])?>" title="首页" class="link <?=  Yii::$app->controller->action->id=='index' && !Yii::$app->request->get('cate') ?'active':'' ?>">首页</a></li>
 
-                    <li class="dropdown margin-left-30 ">
+                    <!--<li class="dropdown margin-left-30 ">
 
                         <?php
-                        $c = Yii::$app->request->get('c');
+/*                        $c = Yii::$app->request->get('c');
                         $c = $c?$c:1;
                         $cateDate = \common\helps\Categoryact::getCate($c);
                         $cateid = Yii::$app->request->get('cate');
@@ -71,19 +87,19 @@ $this->registerCssFile("@web/css/metinfo.css");
                                 }
                             }
                         }
-                        ?>
+                        */?>
 
                         <a
-                            class="dropdown-toggle link  animation-zoomIn <?=  Yii::$app->controller->action->id=='index' && Yii::$app->request->get('cate') ?'active':'' ?> "
+                            class="dropdown-toggle link  animation-zoomIn <?/*=  Yii::$app->controller->action->id=='index' && Yii::$app->request->get('cate') ?'active':'' */?> "
                             data-toggle="dropdown"
                             data-hover="dropdown"
-                            href="<?=Url::to(['site/index','cate'=>$cateid])?>"
+                            href="<?/*=Url::to(['site/index','cate'=>$cateid])*/?>"
                             aria-expanded="true"
                             role="button"
 
-                            title="<?=$name?$name:'区域楼盘'?>"
+                            title="<?/*=$name?$name:'区域楼盘'*/?>"
                         >
-                            <?=$name?$name:'区域楼盘'?>
+                            <?/*=$name?$name:'区域楼盘'*/?>
 
 
                             <i class="fa fa-angle-down"></i></a>
@@ -92,16 +108,28 @@ $this->registerCssFile("@web/css/metinfo.css");
                             <li class='visible-xs active'><a href="product/index.html"  title="全部" class="">全部</a></li>
 
                             <?php
-
+/*
                                 foreach($cateDate as $v){
-                            ?>
-                            <li class="animation-fade animation-delay-"><a href="<?=Url::to(['site/index','cate'=>$v['id'],'c'=>Yii::$app->request->get('c')])?>" class=" animation-fade "  title="<?=$v['name']?>"><?=$v['name']?></a></li>
+                            */?>
+                            <li class="animation-fade animation-delay-"><a href="<?/*=Url::to(['site/index','cate'=>$v['id'],'c'=>Yii::$app->request->get('c')])*/?>" class=" animation-fade "  title="<?/*=$v['name']*/?>"><?/*=$v['name']*/?></a></li>
 
-                            <?php } ?>
+                            <?php /*} */?>
 
                         </ul>
-                    </li>
+                    </li>-->
 
+                    <?php
+                        $c = Yii::$app->request->get('c');
+                        $c = $c?$c:1;
+                        $cateDate = \common\helps\Categoryact::getCate($c);
+                        $cateid = Yii::$app->request->get('cate');
+                        foreach($cateDate as $v){
+                    ?>
+
+                         <li class="margin-left-30"><a href="<?=Url::to(['site/list','c'=>Yii::$app->request->get('c'),'cateid'=>$v['id']])?>"  title="<?=$v['name']?>" class="link  animation-zoomIn <?=  Yii::$app->request->get('cateid')==$v['id'] ?'active':'' ?>  "><?=$v['name']?></a></li>
+
+
+                     <?php } ?>
 
                     <li class="margin-left-30"><a href="<?=Url::to(['site/contactus'])?>"  title="联系" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系我们</a></li>
 
@@ -118,14 +146,10 @@ $this->registerCssFile("@web/css/metinfo.css");
 <div class="bottom-tab">
     <div class="bottom-tab-relative clearfix">
 					<span>
-						<a href="tel:18610008643" title="电话">
-                            <img src="/static/img/tel.jpg"/>
-                        </a>
+						<a href="tel:18610008643" title="电话" style="border-right:1px solid #fff;"><img src="/static/img/ico_tel.png"><br>电话</a>
 					 </span>
 					 <span>
-						<a href="sms:18610008643" title="短信">
-                            <img src="/static/img/message.jpg"/>
-                        </a>
+						<a href="sms:18610008643" title="短信"><img src="/static/img/ico_sms.png"><br>短信</a>
 					</span>
     </div>
 </div>
@@ -139,7 +163,7 @@ $this->registerCssFile("@web/css/metinfo.css");
 <button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"><i class="icon wb-chevron-up" aria-hidden="true"></i></button>
 
 
-<?=Html::jsFile('/frontend/web/js/metinfo.js')?>
+<?=Html::jsFile('/static/js/metinfo.js')?>
 <!--<script src="templates/res017/cache/metinfo.js"></script>-->
 </body>
 </html>

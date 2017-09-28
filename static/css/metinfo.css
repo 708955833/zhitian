@@ -20641,7 +20641,7 @@ div.widget-title {
 }
 
 .widget > .widget-title {
-    padding: 12px 20px
+    padding: 16px 10px;
 }
 
 .widget-metas {
@@ -35823,7 +35823,7 @@ footer p {
 .met-index-body p.desc {
     font-size: 13px;
     text-align: center;
-    width: 80%;
+    width: 100%;
     color: #848484;
     margin: 0px auto;
     margin-bottom: 10px;
@@ -36005,7 +36005,7 @@ footer p {
 }
 
 .met-index-product {
-    text-align: center;
+    text-align: left;
     padding: 15px 0
 }
 
@@ -37214,9 +37214,9 @@ footer p {
 }
 
 .met-product .widget > .widget-title {
-    padding: 20px;
+    padding: 16px 10px;
     border-bottom: 1px solid #E0E0E0;
-    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; font-size:18px;
 }
 
 .met-product .widget, .met-product .widget .widget-header, .met-product .widget-body {
@@ -37226,7 +37226,7 @@ footer p {
     -ms-border-radius: 0 !important;
     border-radius: 0 !important
 }
-
+.widget-shadow ul{ padding-top:10px;}
 .met-product .widget .widget-header:hover a:after {
     top: 35%;
     opacity: 1
@@ -37305,7 +37305,7 @@ footer p {
 
 .met-product.type-1 h4 {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left
 }
 
@@ -37327,7 +37327,7 @@ footer p {
 }
 
 .met-product.type-1 h4 a {
-    color: #464646
+    color: #222222
 }
 
 .met-product.type-1 h4 a:hover {
@@ -37381,7 +37381,11 @@ footer p {
 .met-product.type-3 .widget-actions {
     display: none
 }
-
+ .met-product ul.met-grid li {
+        margin-bottom: 8px;
+        padding: 0 10px 0 0;font-size: 12px;
+    color: #777777;
+    }
 @media (max-width: 767px) {
     .met-product .container, .met-product .container-fluid {
         padding: 10px !important
@@ -37396,8 +37400,9 @@ footer p {
     }
 
     .met-product ul.met-grid li {
-        margin-bottom: 10px;
-        padding: 0 10px 0 0
+        margin-bottom: 8px;
+        padding: 0 10px 0 0;font-size: 12px;
+    color: #777777;
     }
 }
 
@@ -39496,12 +39501,12 @@ footer p {
 .bottom-tab{
     display:none;
     bottom: 0;
-    padding:5px 0;
+    padding:2px 0;
     position: fixed;
     right: 0;
     width: 100%;
     z-index: 9999;
-    background:#000000 none repeat scroll 0 0;
+    background:#099ca0 none repeat scroll 0 0;
 }
 
 .bottom-tab-relative{
@@ -39516,17 +39521,30 @@ footer p {
     text-align:center;
 }
 .bottom-tab-relative a{
-    margin:0 auto;
-    display:block;
-    width:26px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    line-height: 28px;
 }
 .bottom-tab-relative a img{
-    display:block;
-    width:100%;
+    width: 24px;
+    margin-top: 2px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 765px), only screen and (min-width: 1px) and (max-width: 765px) {
 
     .bottom-tab {
-        display: block;
+        display: block; border-right:1px solid #fff;
     }
 }
+
+@media only screen and (max-width: 320px) {
+.met-index-product .nav-tabs li a{ padding: 8px 0px;}  
+.met-index-product .nav-tabs{margin-right:-5px;}
+.met-index-product .nav-tabs li{width: 25%;}
+}
+  .show_qf_table td,.show_qf_bt{
+      text-align: left;
+  }
+

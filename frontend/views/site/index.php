@@ -50,7 +50,7 @@ $this->title = '艾皓思';
                 <?php foreach ($cateData as $v){ ?>
 
                 <li>
-                    <a class=" <?=  Yii::$app->request->get('cate')==$v['id'] ?'active':'' ?>"    href="<?=Url::current(['cate'=>$v['id'],'c'=>$c,'#'=>'o'])?>" title="<?=$v['name']?>"><?=$v['name']?></a>
+                    <a class=" <?=  Yii::$app->request->get('cateid')==$v['id'] ?'active':'' ?>"    href="<?=Url::to(['site/list','c'=>Yii::$app->request->get('c'),'cateid'=>$v['id']])?>" title="<?=$v['name']?>"><?=$v['name']?></a>
                 </li>
 
                 <?php } ?>
@@ -76,30 +76,41 @@ $this->title = '艾皓思';
                             <img class="img-responsive" alt="<?=$v['title']?>" src="<?=$imgpath.$v['indeximg']?>"/>
                         </a>
                     </figure>
-                    <h4 class="widget-title" style="text-align: center">
-                        <a href="" title="<?=$v['title']?>" target='_self'><?=$v['title']?></a>
+                    <!--<h4 class="widget-title" style="text-align: center">
+                        <a href="" title="<?/*=$v['title']*/?>" target='_self'><?/*=$v['title']*/?></a>
                         <br>
                         <br>
-                        <div style="text-align: center">   <span  style="font-size: 18px;color: red;"><?=$v['price']?></span> &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
-							<?=$v['jingzhuang']?> &nbsp;&nbsp;&nbsp; <?=$v['gongyu']?>&nbsp;&nbsp;&nbsp; 
+                        <div style="text-align: center">   <span  style="font-size: 18px;color: red;"><?/*=$v['price']*/?></span> &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+							<?/*=$v['jingzhuang']*/?> &nbsp;&nbsp;&nbsp; <?/*=$v['gongyu']*/?>&nbsp;&nbsp;&nbsp;
 						</div>
                         <br>
                         <br>
 
                         <div style="text-align: center">
-						首付<?=$v['shoufu']?>&nbsp;&nbsp;&nbsp; 
-						租金<?=$v['zujin']?> &nbsp;&nbsp;  涨幅<?=$v['zhangfu']?></div>
+						首付<?/*=$v['shoufu']*/?>&nbsp;&nbsp;&nbsp;
+						租金<?/*=$v['zujin']*/?> &nbsp;&nbsp;  涨幅<?/*=$v['zhangfu']*/?></div>
 
                         <p></p>
 
-                    </h4>
+                    </h4>-->
+                    <h2 class="show_qf_bt"><?=$v['title']?></h2>
+                    <table width="100%" border="0" cellspacing="0" class="show_qf_table">
+                        <tr>
+                            <td><?=$v['price']?></td>
+                            <td><?=$v['jingzhuang']?>  <?=$v['mianji']?> 平方米</td>
+                        </tr>
+                        <tr>
+                            <td>首付: <?=$v['shoufu']?></td>
+                            <td>年租金收益: <?=$v['zujin']?></td>
+                        </tr>
+                    </table>
 
                 </div>
             </div>
 
             <?php } ?>
 
-
+            
             <!-- End Example Lazy Loading -->
         </div>
 
