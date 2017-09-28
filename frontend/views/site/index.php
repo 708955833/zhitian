@@ -34,17 +34,21 @@ $this->title = '艾皓思';
 <div class="met-index-product met-index-body" >
     <a name="o"></a>
     <div class="container">
-        <h3 class="invisible" data-plugin="appear" data-animate="fade" data-repeat="false">楼盘信息</h3>
+
+        <?php
+        $c = Yii::$app->request->get('c')?Yii::$app->request->get('c'):1;
+        $cateData = \common\helps\Categoryact::getCate($c);
+        ?>
+
+
+        <h3 class="invisible" data-plugin="appear" data-animate="fade" data-repeat="false"><?=\common\helps\Cityact::getName($c)?>信息</h3>
         <p class="desc invisible animation-delay-100" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">—— CASE——</p>
-        <p class="desc invisible animation-delay-200" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">最专业最受欢迎的建筑案例，专注于打造最美好的设计</p>
+        <p class="desc invisible animation-delay-200" data-plugin="appear" data-animate="fadeInDown" data-repeat="false">最专业最受欢迎的海外置业团队，专注于打造最美好的生活</p>
         <div class='invisible animation-delay-300' data-plugin="appear" data-animate="fadeInUp" data-repeat="true">
 
             <ul class="nav nav-tabs">
 
-                <?php
-                    $c = Yii::$app->request->get('c')?Yii::$app->request->get('c'):1;
-                    $cateData = \common\helps\Categoryact::getCate($c);
-                ?>
+
 
 
                 <?php foreach ($cateData as $v){ ?>

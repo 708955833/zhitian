@@ -314,6 +314,14 @@ figure {
 .widget-header_,.widget-shadow_{
     padding:10px
 }
+
+.widget-shadow_ ul{
+	list-style-type: disc;
+}
+.widget-shadow_ ul li{
+	opacity:1;
+}
+
 img {
     vertical-align: middle
 }
@@ -36051,7 +36059,7 @@ footer p {
 .met-index-product .more {
     background: none;
     display: none;
-    position: relative
+    position: relative; 
 }
 
 @media (max-width: 991px) {
@@ -36067,7 +36075,7 @@ footer p {
         display: block;
         color: #9f9f9f;
         line-height: 30px;
-        margin-top: -40px
+        margin-top: -40px;text-align:center;
     }
 }
 
@@ -37226,7 +37234,7 @@ footer p {
     -ms-border-radius: 0 !important;
     border-radius: 0 !important
 }
-.widget-shadow ul{ padding-top:10px;}
+.widget-shadow ul{ padding-top:10px; margin-left:22px;}
 .met-product .widget .widget-header:hover a:after {
     top: 35%;
     opacity: 1
@@ -39501,7 +39509,7 @@ footer p {
 .bottom-tab{
     display:none;
     bottom: 0;
-    padding:2px 0;
+    padding:2px 0 1px 0px;
     position: fixed;
     right: 0;
     width: 100%;
@@ -39526,7 +39534,7 @@ footer p {
     width: 100%;
     text-align: center;
     color: #fff;
-    line-height: 28px;
+    line-height: 22px;
 }
 .bottom-tab-relative a img{
     width: 24px;
@@ -39539,7 +39547,7 @@ footer p {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 460px) {
 .met-index-product .nav-tabs li a{ padding: 8px 0px;}  
 .met-index-product .nav-tabs{margin-right:-5px;}
 .met-index-product .nav-tabs li{width: 25%;}

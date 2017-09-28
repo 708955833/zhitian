@@ -40,7 +40,7 @@ AppAsset::register($this);
             font-family: "微软雅黑";
         }
         body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
-        .show_qf_bt{ border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;line-height:26px; padding:8px 30px 8px 10px; font-size:18px; display:inline-block; margin:0px;}
+        .show_qf_bt{ border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;line-height:26px; padding:8px 30px 8px 10px; font-size:18px; display:inline-block; margin-top:10px;}
         .show_qf_table{border-bottom:1px solid #e7e7e7;border-right:1px solid #e7e7e7; width:100%}
         .show_qf_table td{border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;height:34px; line-height:30px; text-indent:10px; font-size:14px;}
         .show_qf_box{height:96px;padding:0px;overflow:hidden;}
@@ -126,14 +126,14 @@ AppAsset::register($this);
                         foreach($cateDate as $v){
                     ?>
 
-                         <li class="margin-left-30"><a href="<?=Url::to(['site/list','c'=>Yii::$app->request->get('c'),'cateid'=>$v['id']])?>"  title="<?=$v['name']?>" class="link  animation-zoomIn <?=  Yii::$app->request->get('cateid')==$v['id'] ?'active':'' ?>  "><?=$v['name']?></a></li>
+                         <li class="margin-left-30"><a href="<?=Url::to(['site/list','c'=>Yii::$app->request->get('c'),'cateid'=>$v['id']])?>"  title="<?=$v['name']?>" class="link <?=  Yii::$app->request->get('cateid')==$v['id'] ?'active':'' ?>  "><?=$v['name']?></a></li>
 
 
                      <?php } ?>
 
-                    <li class="margin-left-30"><a href="<?=Url::to(['site/contactus'])?>"  title="联系" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系我们</a></li>
+                    <li class="margin-left-30"><a href="<?=Url::to(['site/contactus'])?>"  title="联系" class="link   <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系我们</a></li>
 
-					<li class="margin-left-30"><a href="<?=Url::to(['site/aboutus'])?>"  title="联系" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='aboutus' ?'active':'' ?>  ">公司简介</a></li>
+					<li class="margin-left-30"><a href="<?=Url::to(['site/aboutus'])?>"  title="联系" class="link   <?=  Yii::$app->controller->action->id=='aboutus' ?'active':'' ?>  ">公司简介</a></li>
                 </ul>
 
             </div>

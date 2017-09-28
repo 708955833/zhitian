@@ -12,7 +12,7 @@ class Categoryact extends Action
     public static function getCate($c=1)
     {
         $cate = new Category();
-        $cateDate =  $cate->find()->where(['city'=>$c])->orderBy('id desc')->asArray()->all();
+        $cateDate =  $cate->find()->where(['city'=>$c])->orderBy('orderby asc')->asArray()->all();
         
         return $cateDate;
 
