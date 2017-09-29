@@ -47,7 +47,7 @@ AppAsset::register($this);
                     <span class="sr-only">Toggle navigation</span>
                     <span class="hamburger-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand navbar-logo vertical-align" title="res017">
+                <a href="/" class="navbar-brand navbar-logo vertical-align" title="res017">
                     <div class="vertical-align-middle"><img src="upload/201705/logo.png" alt="ihouse" title="ihouse" /></div>
                 </a>
             </div>
