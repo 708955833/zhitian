@@ -31,22 +31,6 @@ AppAsset::register($this);
 <!--    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
 <!--    <link rel='stylesheet' href='templates/res017/cache/metinfo.css?20170804'>-->
     <?=Html::cssFile('/static/css/metinfo.css')?>
-    <style type="text/css">
-        body {
-            margin-left: 0px;
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
-            font-family: "微软雅黑";
-        }
-        body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
-        .show_qf_bt{ border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;line-height:26px; padding:8px 30px 8px 10px; font-size:18px; display:inline-block; margin-top:10px;}
-        .show_qf_table{border-bottom:1px solid #e7e7e7;border-right:1px solid #e7e7e7; width:100%}
-        .show_qf_table td{border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;height:34px; line-height:30px; text-indent:10px; font-size:14px;}
-        .show_qf_box{height:96px;padding:0px;overflow:hidden;}
-        .zhankai{text-align: center;margin: 10px auto;width: 30px;display: block;cursor: pointer;}
-        .zhankai img{ width:30px;}
-    </style>
 </head>
 <body class="met-navfixed">
 <!--[if lte IE 8]>
@@ -70,7 +54,7 @@ AppAsset::register($this);
             <div class="collapse navbar-collapse navbar-collapse-toolbar" id="example-navbar-default-collapse">
 
                 <ul class="nav navbar-nav navbar-right navlist">
-                    <li><a href="<?=Url::to(['site/index'])?>" title="首页" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='index' && !Yii::$app->request->get('cate') ?'active':'' ?>">首页</a></li>
+                    <li><a href="<?=Url::to(['site/index','c'=>Yii::$app->request->get('c')])?>" title="首页" class="link  animation-zoomIn <?=  Yii::$app->controller->action->id=='index' && !Yii::$app->request->get('cate') ?'active':'' ?>">首页</a></li>
 
                     <!--<li class="dropdown margin-left-30 ">
 
@@ -131,9 +115,9 @@ AppAsset::register($this);
 
                      <?php } ?>
 
-                    <li class="margin-left-30"><a href="<?=Url::to(['site/contactus'])?>"  title="联系" class="link  animation-zoomIn  <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系我们</a></li>
+                    <li class="margin-left-30"><a href="<?=Url::to(['site/contactus','c'=>Yii::$app->request->get('c')])?>"  title="联系我们" class="link  animation-zoomIn  <?=  Yii::$app->controller->action->id=='contactus' ?'active':'' ?>  ">联系我们</a></li>
 
-					<li class="margin-left-30"><a href="<?=Url::to(['site/aboutus'])?>"  title="联系" class="link   animation-zoomIn <?=  Yii::$app->controller->action->id=='aboutus' ?'active':'' ?>  ">公司简介</a></li>
+					<li class="margin-left-30"><a href="<?=Url::to(['site/aboutus','c'=>Yii::$app->request->get('c')])?>"  title="公司简介"   class="link   animation-zoomIn <?=  Yii::$app->controller->action->id=='aboutus' ?'active':'' ?>  ">公司简介</span></a></li>
                 </ul>
 
             </div>

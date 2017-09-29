@@ -108,7 +108,7 @@ class SiteController extends Controller
             $cateQuery = $cateQuery->andWhere(['id'=>$cateid]);
         }
 
-        $cateDate = $cateQuery->orderBy('id desc')->asArray()->one();
+        $cateDate = $cateQuery->orderBy('id asc')->asArray()->one();
         $imgArr = explode('|',$cateDate['bannerimg']);
         $idArr = explode('|',$cateDate['bannername']);
         $lunboArr = array();
