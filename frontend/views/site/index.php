@@ -48,7 +48,7 @@ $this->title = '艾皓思';
 
 
 
-       <a href="<?= Url::to(['site/show','id'=>$v['id'],'c'=>Yii::$app->request->get('c')]) ?>"> <img class="cover-image" src="<?=$v['img']?>" srcset='<?=$v['img']?>' sizes="(max-width: 767px) 500px" alt=""> </a>
+       <a href="javascript:void(0)"> <img class="cover-image" src="<?=$v['img']?>" srcset='<?=$v['img']?>' sizes="(max-width: 767px) 500px" alt=""> </a>
 
 
 
@@ -240,7 +240,7 @@ $this->title = '艾皓思';
 
         <a href="<?=Url::to(['site/list','cateid'=>Yii::$app->request->get('cate'),'c'=>Yii::$app->request->get('c')])?>" class="index_more"></a>
 
-        <a href="<?=Url::to(['site/list','cateid'=>Yii::$app->request->get('cate'),'c'=>Yii::$app->request->get('c')])?>" class="more">MORE</a>
+        <a href="<?=Url::to(['site/list','cateid'=>Yii::$app->request->get('cate'),'c'=>Yii::$app->request->get('c')])?>" class="more">更多楼盘</a>
 
     </div>
 

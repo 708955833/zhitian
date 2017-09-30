@@ -56,10 +56,10 @@ $this->title = '艾皓思';
                             </div>
 
                             <div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-                                涨幅 : <?=$data['zhangfu']?>
+                                房产增值 : <?=$data['zhangfu']?>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-                                租金 : <?=$data['zujin']?>
+                                年租金回报率 : <?=$data['zujin']?>
                             </div>
 
                         </div>

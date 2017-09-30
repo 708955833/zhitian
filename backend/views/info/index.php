@@ -33,10 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
                   return  \common\helps\Categoryact::getName($model->cateid);
                 },
             ],
-        
-        
-            'dizhi',
-            'guige',
+
+            [
+                'attribute'=>'cityid',
+                'value'=>function($model){
+                    return  \common\helps\Cityact::getName($model->cityid);
+                },
+            ],
+            'tese',
             // 'tese',
             // 'price',
             // 'shouyi',

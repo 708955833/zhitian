@@ -118,6 +118,7 @@ $this->title = '艾皓思';
                                 if($v['desc1']){
                             ?>
                                 <div>  <?=$v['desc1']?>  </div>
+                                <p style="padding-left: 10px"><a href="<?=\yii\helpers\Url::to(['site/show','id'=>$v['id'],'c'=>Yii::$app->request->get('c')])?>">更多信息</a></p>
                             <?php } ?>
 
                             <?php /*if($v['desc1']){ */?><!--

@@ -124,7 +124,7 @@ class SiteController extends Controller
         //楼盘
         $info = new Info();
         $Query =  $info->find();
-        $Query->where(['cityid'=>$c]);
+        $Query->where(['cityid'=>$c,'tese'=>1]);
         if($cateid){
             $Query->andWhere(['cateid'=>$cateid]);
         }

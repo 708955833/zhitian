@@ -61,7 +61,7 @@ class Info extends \yii\db\ActiveRecord
             'cateid' => '所属栏目',
             'dizhi' => '地址',
             'guige' => '规格 图片下面的小子',
-            'tese' => '特色',
+            'tese' => '是否在首页展示 1展示',
             'price' => '价格',
             'shouyi' => '年收益',
             'shoufu' => '首付',
@@ -99,7 +99,7 @@ class Info extends \yii\db\ActiveRecord
             'd5' => '是否隐藏1 隐藏 0显示',
             'shangxue' => '上学排行',
             'yimin' => '移民排行',
-            'cityid' => '栏目所属城市',
+            'cityid' => '所属城市',
 
         ];
     }
