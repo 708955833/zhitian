@@ -7,6 +7,10 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = '艾皓思';
+$this->metaTags[]="<meta name='keywords' content=''/>";
+$this->metaTags[]="<meta name='description' content='sdf'/>";
+
+
 
 ?>
 

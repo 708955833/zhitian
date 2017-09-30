@@ -20,16 +20,14 @@ AppAsset::register($this);
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>艾皓思</title>
+    <title><?=$this->title?></title>
     <meta name="renderer" content="webkit">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
     <meta name="generator" content="MetInfo 5.3.16"  data-variable="http://zt.com/frontend/web/,cn,10001,,10001,res017" />
 <!--    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
-<!--    <link rel='stylesheet' href='templates/res017/cache/metinfo.css?20170804'>-->
+    <?php $this->head() ?>
     <?=Html::cssFile('/static/css/metinfo.css')?>
 </head>
 <body class="met-navfixed">
@@ -130,10 +128,10 @@ AppAsset::register($this);
 <div class="bottom-tab">
     <div class="bottom-tab-relative clearfix">
 					<span>
-						<a href="tel:4000666804" title="电话" style="border-right:1px solid #fff;"><img src="/static/img/ico_tel.png"><br>电话</a>
+						<a href="tel:18610008643" title="电话" style="border-right:1px solid #fff;"><img src="/static/img/ico_tel.png"><br>电话</a>
 					 </span>
 					 <span>
-						<a href="sms:4000666804" title="短信"><img src="/static/img/ico_sms.png"><br>短信</a>
+						<a href="sms:18610008643" title="短信"><img src="/static/img/ico_sms.png"><br>短信</a>
 					</span>
     </div>
 </div>
@@ -149,15 +147,6 @@ AppAsset::register($this);
 
 <?=Html::jsFile('/static/js/metinfo.js')?>
 <!--<script src="templates/res017/cache/metinfo.js"></script>-->
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?e717ace1c9ffc376d7aaa1cec5b5b1e9";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>
 

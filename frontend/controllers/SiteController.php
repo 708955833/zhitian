@@ -26,6 +26,8 @@ class SiteController extends Controller
     public $root = '/app/frontend/web/';
     public $imgpath = '/backend/web/';
 //    public $imgpath = '/ihouse/backend/web/';
+    public $keywords = '泰国房产,艾皓思';
+    public $description = '';
     /**
      * @inheritdoc
      */
