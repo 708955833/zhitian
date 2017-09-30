@@ -39550,7 +39550,7 @@ body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,s
 .show_qf_bt{ border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;line-height:26px; padding:8px 30px 8px 10px; font-size:18px; display:inline-block; margin-top:10px;}
 .show_qf_table{border-bottom:1px solid #e7e7e7;border-right:1px solid #e7e7e7; width:100%}
 .show_qf_table td{border-left:1px solid #e7e7e7;border-top:1px solid #e7e7e7;height:34px; line-height:30px; text-indent:10px; font-size:14px;}
-.show_qf_box{height:200px;padding:0px;overflow:hidden;}
+.show_qf_box{height:230px;padding:0px;overflow:hidden;}
 .zhankai{text-align: center;margin: 10px auto;width: 30px;display: block;cursor: pointer;}
 .zhankai img{ width:30px;}
 @media only screen and (max-width: 1366px) {[class*="blocks-"] > li > .widget {margin-bottom: 0;min-height:455px;}

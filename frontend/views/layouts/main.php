@@ -128,10 +128,10 @@ AppAsset::register($this);
 <div class="bottom-tab">
     <div class="bottom-tab-relative clearfix">
 					<span>
-						<a href="tel:18610008643" title="电话" style="border-right:1px solid #fff;"><img src="/static/img/ico_tel.png"><br>电话</a>
+						<a href="tel:4000666804" title="电话" style="border-right:1px solid #fff;"><img src="/static/img/ico_tel.png"><br>电话</a>
 					 </span>
 					 <span>
-						<a href="sms:18610008643" title="短信"><img src="/static/img/ico_sms.png"><br>短信</a>
+						<a href="sms:13810063445" title="短信"><img src="/static/img/ico_sms.png"><br>短信</a>
 					</span>
     </div>
 </div>
@@ -147,6 +147,15 @@ AppAsset::register($this);
 
 <?=Html::jsFile('/static/js/metinfo.js')?>
 <!--<script src="templates/res017/cache/metinfo.js"></script>-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?e717ace1c9ffc376d7aaa1cec5b5b1e9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </body>
 </html>
 

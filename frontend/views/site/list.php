@@ -11,7 +11,7 @@ $this->title = '艾皓思';
 
     <div class="slick-slide">
 
-        <img class="cover-image" src="/upload/201705/1494496190.jpg" srcset='/upload/201705/1494496190.jpg' sizes="(max-width: 767px) 500px" alt="">
+        <img class="cover-image" src="/upload/201705/1732988296.jpg" srcset='/upload/201705/1732988296.jpg' sizes="(max-width: 767px) 500px" alt="">
 
         <div class="banner-text p-5">
             <div class='container'>
