@@ -39570,7 +39570,7 @@ body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,s
 .met-showproduct.pagetype1 .met-showproduct-body .product-hot .mob-masonry li { height:130px;}
 }
 @media only screen and (max-width: 420px) {
-.show_qf_box  embed,.show_qf_box iframe{ width:100%; height:210px;}
+.show_qf_box  embed,.show_qf_box iframe{ width:100%; height:230px;}
 .met-showproduct.pagetype1 .met-showproduct-body .product-hot .mob-masonry li { height:115px;}
 }
 @media only screen and (max-width: 360px) {
