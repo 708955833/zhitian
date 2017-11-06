@@ -150,9 +150,9 @@ $this->title = '艾皓思';
                 <?=\yii\widgets\LinkPager::widget([
                     'pagination' => $pages,
                 ])?>
-            <div class="met-page-ajax-body visible-xs-block invisible" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
+          <!--  <div class="met-page-ajax-body visible-xs-block invisible" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
                 <button type="button" class="btn btn-default btn-block btn-squared ladda-button" id="met-page-btn" data-style="slide-left" data-url="/muban/res017/343/product/product.php?lang=cn&class2=119?lang=cn&class1=3&class2=119&class3=0&mbpagelist=1" data-page="1"><i class="icon wb-chevron-down margin-right-5" aria-hidden="true"></i>更多产品</button>
-            </div>
+            </div>-->
             <!--
 
 

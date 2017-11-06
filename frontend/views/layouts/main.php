@@ -137,9 +137,9 @@ AppAsset::register($this);
 </div>
 <footer>
     <div class="container text-center">
-        <p>我的网站 版权所有 2008-2016 湘ICP备8888888 </p>
+        <p>我的网站 版权所有 冀ICP备17029523号-1 </p>
 
-        
+
     </div>
 </footer>
 <button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"><i class="icon wb-chevron-up" aria-hidden="true"></i></button>
