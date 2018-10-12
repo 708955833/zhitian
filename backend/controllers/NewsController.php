@@ -16,20 +16,7 @@ use yii\web\UploadedFile;
  */
 class NewsController extends AdminController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
     public function actionAsyncupload(){
         $model = new News();
         $model->img = UploadedFile::getInstance($model, "img");

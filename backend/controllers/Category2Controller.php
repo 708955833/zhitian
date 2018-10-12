@@ -12,22 +12,9 @@ use yii\filters\VerbFilter;
 /**
  * Category2Controller implements the CRUD actions for Category2 model.
  */
-class Category2Controller extends Controller
+class Category2Controller extends AdminController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Category2 models.

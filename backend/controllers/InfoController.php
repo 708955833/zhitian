@@ -15,22 +15,9 @@ use yii\web\UploadedFile;
 /**
  * InfoController implements the CRUD actions for Info model.
  */
-class InfoController extends Controller
+class InfoController extends AdminController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Info models.

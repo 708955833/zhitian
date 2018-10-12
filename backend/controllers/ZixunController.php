@@ -13,22 +13,8 @@ use yii\web\UploadedFile;
 /**
  * ZixunController implements the CRUD actions for Zixun model.
  */
-class ZixunController extends Controller
+class ZixunController extends AdminController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all Zixun models.
