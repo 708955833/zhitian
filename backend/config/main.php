@@ -49,7 +49,10 @@ return [
         'imgload'=>[
             'class' => 'backend\components\Upload',
         ],
-
+        'assetManager' => [
+            'basePath' => '@webroot/backend/web/assets',
+            'baseUrl' => '@web/backend/web/assets'
+        ],
 
     ],
     'modules' => [
