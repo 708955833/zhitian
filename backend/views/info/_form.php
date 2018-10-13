@@ -130,6 +130,8 @@ use yii\widgets\ActiveForm;
     ])?>
     <?= $form->field($model, 'd5')->textInput() ?>
 
+    <?= $form->field($model, 'content')->textInput() ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
