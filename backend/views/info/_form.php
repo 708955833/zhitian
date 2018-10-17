@@ -39,8 +39,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'zhangfu')->textInput() ?>
 
     <?= $form->field($model, 'indeximg')->fileInput();?>
-    <?= $form->field($model, 'shangxue')->textInput();?>
-    <?= $form->field($model, 'yimin')->textInput();?>
+    <?= $form->field($model, 'shangxue')->textInput(['value'=>'0']);?>
+    <?= $form->field($model, 'yimin')->textInput(['value'=>'0']);?>
 
 
 
@@ -75,7 +75,7 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
-    <?= $form->field($model, 'd1')->textInput() ?>
+    <?= $form->field($model, 'd1')->textInput(['value'=>'0']) ?>
     <br/><br/><br/><br/>
 
     <?= $form->field($model, 'name2')->textInput() ?>
@@ -88,7 +88,7 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
-    <?= $form->field($model, 'd2')->textInput() ?>
+    <?= $form->field($model, 'd2')->textInput(['value'=>'0']) ?>
     <br/><br/><br/><br/>
 
     <?= $form->field($model, 'name3')->textInput() ?>
@@ -101,7 +101,7 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
-    <?= $form->field($model, 'd3')->textInput() ?>
+    <?= $form->field($model, 'd3')->textInput(['value'=>'0']) ?>
 
     <br/><br/><br/><br/>
 
@@ -115,7 +115,7 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
-    <?= $form->field($model, 'd4')->textInput() ?>
+    <?= $form->field($model, 'd4')->textInput(['value'=>'0']) ?>
     <br/><br/><br/><br/>
 
     <?= $form->field($model, 'name5')->textInput() ?>
@@ -128,9 +128,9 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ])?>
-    <?= $form->field($model, 'd5')->textInput() ?>
+    <?= $form->field($model, 'd5')->textInput(['value'=>'0']) ?>
 
-    <?= $form->field($model, 'content')->textInput() ?>
+    <?= $form->field($model, 'content')->textInput(['value'=>'0']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
