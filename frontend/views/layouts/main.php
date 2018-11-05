@@ -137,7 +137,7 @@ AppAsset::register($this);
 </div>
 <footer>
     <div class="container text-center">
-        <p>我的网站 版权所有 冀ICP备17029523号-1 </p>
+        <p>我的网站 版权所有 <a href="http://www.miitbeian.gov.cn/">京ICP备18053842号</a> </p>
 
 
     </div>
